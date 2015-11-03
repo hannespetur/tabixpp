@@ -15,7 +15,10 @@ find_package(ZLIB REQUIRED)
 include_directories( ${ZLIB_INCLUDE_DIRS} )
 
 # Find htslib (libfind_package(HTSlib))
-find_package(htslib REQUIRED)
+# find_package(htslib REQUIRED)
+
+add_subdirectory(utilities/htslib)
+message("Dir: ${htslib_INCLUDE_DIRS}")
 include_directories(${htslib_INCLUDE_DIRS})
 include_directories($ENV{HTSLIB_ROOT})
 
