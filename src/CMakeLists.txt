@@ -7,6 +7,7 @@ set(tabix_SOURCE_FILES
 
 add_library(tabix_core ${tabix_SOURCE_FILES})
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
+include_directories(${htslib_INCLUDE_DIRS})
 
 add_executable(tabix main.cpp)
 target_link_libraries(tabix tabix_core ${HTSlib_LIBRARY} ${ZLIB_LIBRARIES})
