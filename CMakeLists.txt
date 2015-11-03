@@ -18,9 +18,9 @@ include_directories( ${ZLIB_INCLUDE_DIRS} )
 # find_package(htslib REQUIRED)
 
 add_subdirectory(utilities/htslib)
-message("Dir: ${htslib_INCLUDE_DIRS}")
+message("${htslib_INCLUDE_DIRS}")
 include_directories(${htslib_INCLUDE_DIRS})
-include_directories($ENV{HTSLIB_ROOT})
+
 
 set(EXECUTABLE_OUTPUT_PATH ../bin)
 add_subdirectory(src)
