@@ -9,8 +9,6 @@
 #include <vector>
 
 
-using namespace std;
-
 class Tabix {
 
     htsFile* fn;
@@ -18,21 +16,21 @@ class Tabix {
     hts_itr_t* iter;
     const tbx_conf_t *idxconf;
     int tid, beg, end;
-    string firstline;
+    std::string firstline;
     bool has_jumped;
-    vector<string>::iterator current_chrom;
+    std::vector<std::string>::iterator current_chrom;
 
 public:
 
-    string filename;
-    vector<string> chroms;
+    std::string filename;
+    std::vector<std::string> chroms;
 
     Tabix(void);
-    Tabix(string& file);
+    Tabix(std::string & file);
     ~Tabix(void);
 
-    void getHeader(string& header);
-    bool setRegion(string& region);
-    bool getNextLine(string& line);
+    void getHeader(std::string & header);
+    bool setRegion(std::string & region);
+    bool getNextLine(std::string & line);
 
 };
